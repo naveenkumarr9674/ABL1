@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Dining</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.7) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFD700 !important;
+            text-decoration: underline;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700 !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #FFD700;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .carousel-caption h5 {
+            color: #FFD700;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .popover-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .popover-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            margin-left: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            min-width: 180px;
+            z-index: 1;
+        }
+
+        .popover-container:hover .popover-content {
+            display: block;
+        }
+
+        /* Reservation Section Styling */
+        #reservation {
+            background-color: #f7f7f7;
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        #reservation h2 {
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        #reservation label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        #reservation button {
+            background-color: #FFD700;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        #reservation button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: #FFD700;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Delicious Dining</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reservation">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="https://wallpaperaccess.com/full/2975527.jpg" class="d-block w-100" alt="Delicious Dish">
+                <div class="carousel-caption d-md-block">
+                    <h5>Welcome to Delicious Dining</h5>
+                    <p>Experience the finest cuisines crafted with love.</p>
+                </div>
+            </div>
+            <div cdata-bs-interval="3000">
+                <img src="https://th.bing.com/th/id/R.dd5d9fbdd03a3b47d21baa8633231e67?rik=a3iMyOmV0XwEwA&riu=http://www.baltana.com/files/wallpapers-2/Food-HD-Wallpapers-04864.jpg&ehk=oCGq87EnzGa53wpyGPk3aNhI03hKYPPWLQVzqCKdPe0=&risl=&pid=ImgRaw&r=0" class="d-block w-100" alt="Tasty Delights">
+                <div class="carousel-caption d-md-block">
+                    <h5>Tasty Delights</h5>
+                    <p>Explore our menu of gourmet dishes.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="https://images.pexels.com/photos/1860208/pexels-photo-1860208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="d-block w-100" alt="Dine with Us">
+                <div class="carousel-caption d-md-block">
+                    <h5>Dine with Us</h5>
+                    <p>Reserve your table for an unforgettable experience.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Menu Section -->
+    <section id="menu" class="container mt-5">
+        <h2 class="text-center">Our Menu</h2>
+        <div class="row">
+            <!-- Menu Items -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.za5FfqyVgT9EZzCdkK9yzwAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="Dish 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Dish 1</h5>
+                        <p class="card-text">₹250</p>
+                        <div class="popover-container">
+                            <button class="btn btn-primary">View Ingredients</button>
+                            <div class="popover-content">
+                                Fresh vegetables, chicken, spices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.aALYLENdPDxRTJGp5HjXaQHaEk?rs=1&pid=ImgDetMain" class="card-img-top" alt="Dish 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Dish 2</h5>
+                        <p class="card-text">₹300</p>
+                        <div class="popover-container">
+                            <button class="btn btn-primary">View Ingredients</button>
+                            <div class="popover-content">
+                                Fresh fish, herbs, spices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/beef-basmati-rice-vegetables-carrots-bell-peppers-onions-garlic-spices-sesame-soy-sauce-asian-dishes-selective-133887347.jpg" class="card-img-top" alt="Dish 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Dish 3</h5>
+                        <p class="card-text">₹350</p>
+                        <div class="popover-container">
+                            <button class="btn btn-primary">View Ingredients</button>
+                            <div class="popover-content">
+                                Beef, garlic, onions, spices.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="table" class="container mt-5">
+        <h2 class="text-center">Our Partners</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Partner Name</th>
+                    <th scope="col">Collaboration Type</th>
+                    <th scope="col">Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Zomato</td>
+                    <td>Food Delivery & Reviews</td>
+                    <td><a href="https://www.zomato.com" target="_blank">Visit Zomato</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="container mt-5">
+        <h2 class="text-center">Make a Reservation</h2>
+        <form>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your full name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your email">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date">Reservation Date</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="time">Reservation Time</label>
+                        <input type="time" class="form-control" id="time">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Reserve Now</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <h3>&copy; 2025 Delicious Dining</h3>
+        <p>Contact: 087-588-254 | 9875945287</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
